@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER SHIELD AI | Professional Scanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CYBER SHIELD AI</div>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}" class="active">HOME</a>
+            <a href="{{ url_for('about') }}">ABOUT US</a>
+            <a href="{{ url_for('contact') }}">CONTACT</a>
+        </div>
+    </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 id="main-title">CYBER SHIELD<span>_</span></h1>
+                <p class="hero-subtitle">The world's most advanced AI-driven security link validation system. Protect your digital footprint with real-time heuristic scanning.</p>
+                
+                <div class="cta-container">
+                    <a href="https://cybersalmanproject.netlify.app" class="scan-btn-link">
+                        <span class="btn-text">SCAN LINK NOW</span>
+                        <i data-lucide="shield-check"></i>
+                    </a>
+                </div>
+
+                <div class="status-bar">
+                    <div class="status-item"><span class="dot"></span> 2.4M Scans Completed</div>
+                    <div class="status-item"><span class="dot"></span> 99.8% Accuracy</div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="glass-panel feature-card">
+                    <i data-lucide="zap"></i>
+                    <h3>Instant Validation</h3>
+                    <p>Millisecond response times via our global edge network.</p>
+                </div>
+                <div class="glass-panel feature-card">
+                    <i data-lucide="shield"></i>
+                    <h3>AI Detection</h3>
+                    <p>Heuristic patterns identify threats before they are blacklisted.</p>
+                </div>
+                <div class="glass-panel feature-card">
+                    <i data-lucide="globe"></i>
+                    <h3>Global Intelligence</h3>
+                    <p>Syncing with worldwide threat databases in real time.</p>
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <p>&copy; 2026 CYBER SHIELD AI SYSTEMS - SECURE PROTOCOL v4.2.0</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

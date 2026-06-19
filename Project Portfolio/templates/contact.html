@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | CYBER SHIELD AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+        textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--grid-line);
+            padding: 15px;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            outline: none;
+            min-height: 150px;
+        }
+        textarea:focus {
+            border-color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CYBER SHIELD AI</div>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">HOME</a>
+            <a href="{{ url_for('about') }}">ABOUT US</a>
+            <a href="{{ url_for('contact') }}" class="active">CONTACT</a>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        <h2 class="section-title">// SECURE_COMMS</h2>
+
+        {% if submitted %}
+        <div class="glass-panel" style="padding: 20px; margin-bottom: 20px; border-color: var(--accent-color); color: var(--accent-color); font-family: var(--font-mono);">
+            Inquiry Transmitted via Secure Channel.
+        </div>
+        {% endif %}
+        
+        <div class="glass-panel cyber-box top-left top-right bottom-left bottom-right" style="padding: 40px;">
+            <form method="POST" action="{{ url_for('contact') }}">
+                <div class="form-group">
+                    <label>IDENTIFIER [NAME]</label>
+                    <input type="text" name="name" placeholder="User Name...">
+                </div>
+                <div class="form-group">
+                    <label>UPLINK [EMAIL]</label>
+                    <input type="text" name="email" placeholder="address@domain.ext">
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE DATA</label>
+                    <textarea name="message" placeholder="Transmission content..."></textarea>
+                </div>
+                <button type="submit" class="scan-btn">TRANSMIT DATA</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CYBER SHIELD AI SYSTEMS - SECURE PROTOCOL v4.2.0</p>
+    </footer>
+
+</body>
+</html>
